@@ -23,9 +23,6 @@ The application is structured entirely modularly:
 ## 📖 How to Use
 
 **Step 1: Open the Application**
-
-Make sure the development server is running (`npm run dev`).
-Open your web browser and go to `http://localhost:5173/`.
 You will see a canvas area with one default "Send Message" node already on it, and a "Nodes Panel" on the right sidebar.
 
 **Step 2: Add New Nodes**
