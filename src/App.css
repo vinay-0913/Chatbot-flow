@@ -1,0 +1,266 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+  height: 60px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 24px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+.save-btn {
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.save-btn:hover {
+  background-color: #2563eb;
+}
+
+.save-btn.error {
+  background-color: #ef4444;
+}
+
+.save-btn.error:hover {
+  background-color: #dc2626;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 60px);
+}
+
+.canvas-area {
+  flex: 1;
+  height: 100%;
+}
+
+.sidebar {
+  width: 300px;
+  background-color: #ffffff;
+  border-left: 1px solid #e2e8f0;
+  height: 100%;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  padding: 16px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+  flex: 1;
+}
+
+.sidebar-back-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.sidebar-back-btn:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.sidebar-content {
+  padding: 16px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Draggable Node Item in Sidebar */
+.dnd-node {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #475569;
+  cursor: grab;
+  background-color: #ffffff;
+  transition: all 0.2s;
+}
+
+.dnd-node:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.1), 0 2px 4px -1px rgba(59, 130, 246, 0.06);
+}
+
+.dnd-node:active {
+  cursor: grabbing;
+}
+
+/* Custom Text Node in Canvas */
+.custom-text-node {
+  background-color: #ffffff;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.custom-text-node.selected {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6, 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.node-header {
+  background-color: #dbeafe;
+  /* Light blue header */
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #bfdbfe;
+}
+
+.node-header-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e3a8a;
+  /* Dark text for blue background */
+}
+
+.node-icon {
+  color: #2563eb;
+}
+
+.node-whatsapp-icon {
+  margin-left: auto;
+  color: #22c55e;
+  /* green aesthetic indicator */
+  background: white;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.node-body {
+  padding: 12px;
+  font-size: 14px;
+  color: #334155;
+  min-height: 48px;
+  word-break: break-word;
+}
+
+/* React Flow overrrides */
+.react-flow__handle {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border: 1px solid #94a3b8;
+}
+
+.react-flow__handle.source {
+  right: -5px;
+}
+
+.react-flow__handle.target {
+  left: -5px;
+}
+
+/* Settings Form */
+.settings-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settings-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.settings-group textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.settings-group textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Toast container */
+.toast-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 16px;
+  width: 100%;
+  pointer-events: none;
+  z-index: 50;
+  transition: opacity 0.3s transform 0.3s;
+}
+
+.toast {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+.toast.error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.toast.success {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
